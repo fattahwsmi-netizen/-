@@ -6,12 +6,12 @@
     <title>بن ابن لقمان</title>
     <style>
         :root {
-            --bg-color: #1a1917;
-            --text-color: #ffffff;
-            --gold-color: #c59f4e;
-            --secondary-color: #262421;
-            --accent-color: #a37f37;
-            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --bg-color: #12100e;
+            --text-color: #f4e8d3;
+            --gold-color: #d4af37;
+            --secondary-bg: #1f1a17;
+            --accent-color: #99732b;
+            --font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
@@ -27,22 +27,25 @@
         /* Sidebar Navigation */
         .sidebar {
             width: 300px;
-            background-color: var(--secondary-color);
-            padding: 30px;
+            background-color: var(--secondary-bg);
+            padding: 40px 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            border-left: 1px solid var(--gold-color);
+            border-left: 2px solid var(--gold-color);
             position: fixed;
             height: 100vh;
+            box-shadow: 5px 0 15px rgba(0,0,0,0.5);
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: bold;
             color: var(--gold-color);
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(212,175,55,0.5);
         }
 
         nav ul {
@@ -51,37 +54,43 @@
         }
 
         nav ul li {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         nav ul li a {
             text-decoration: none;
             color: var(--text-color);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             display: block;
-            padding: 12px;
-            border-radius: 5px;
-            transition: all 0.3s;
-            border-bottom: 1px solid transparent;
+            padding: 15px;
+            border-radius: 8px;
+            transition: all 0.4s ease;
+            text-align: center;
+            border: 1px solid transparent;
         }
 
         nav ul li a:hover {
             color: var(--gold-color);
-            border-bottom-color: var(--gold-color);
+            background-color: var(--bg-color);
+            border-color: var(--gold-color);
+            box-shadow: 0 0 15px rgba(212,175,55,0.3);
         }
 
         .contact-info {
-            font-size: 0.9rem;
-            color: #aaa;
+            font-size: 1rem;
+            color: #d4c4a8;
+            text-align: center;
+            line-height: 1.8;
         }
 
         .contact-info p {
-            margin: 8px 0;
+            margin: 10px 0;
         }
 
         .contact-info a {
             color: var(--gold-color);
             text-decoration: none;
+            font-weight: bold;
         }
 
         /* Main Content */
@@ -96,19 +105,24 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
-            background-color: var(--secondary-color);
+            padding: 25px 50px;
+            background-color: var(--secondary-bg);
             border-bottom: 1px solid var(--gold-color);
         }
 
         .search-bar {
             background-color: var(--bg-color);
             border: 1px solid var(--gold-color);
-            padding: 10px 15px;
-            border-radius: 20px;
-            width: 350px;
+            padding: 12px 20px;
+            border-radius: 30px;
+            width: 400px;
             display: flex;
             align-items: center;
+            transition: all 0.4s ease;
+        }
+
+        .search-bar:focus-within {
+            box-shadow: 0 0 15px rgba(212,175,55,0.5);
         }
 
         .search-bar input {
@@ -117,14 +131,16 @@
             color: white;
             width: 100%;
             outline: none;
+            font-size: 1.1rem;
+            font-family: inherit;
         }
 
         .header-icons a {
             color: var(--text-color);
             text-decoration: none;
-            margin-left: 25px;
-            font-size: 1.3rem;
-            transition: color 0.3s;
+            margin-left: 30px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
         }
 
         .header-icons a:hover {
@@ -134,7 +150,7 @@
         /* Hero Section */
         .hero {
             flex: 1;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('coffee-hero.jpg') center/cover;
+            background: linear-gradient(rgba(18,16,14,0.85), rgba(18,16,14,0.85)), url('coffee-bg.jpg') center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -144,33 +160,39 @@
         }
 
         .hero h2 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             color: var(--gold-color);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(212,175,55,0.6);
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 35px;
-            max-width: 700px;
-            line-height: 1.6;
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            line-height: 1.8;
+            color: #d4c4a8;
         }
 
         .btn {
-            background-color: transparent;
-            color: var(--gold-color);
-            padding: 15px 45px;
+            background: linear-gradient(45deg, var(--gold-color), var(--accent-color));
+            color: white;
+            padding: 20px 60px;
             text-decoration: none;
-            border: 2px solid var(--gold-color);
             border-radius: 5px;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: bold;
-            transition: all 0.3s;
+            transition: all 0.4s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         .btn:hover {
-            background-color: var(--gold-color);
-            color: var(--bg-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212,175,55,0.5);
+            background: linear-gradient(45deg, var(--accent-color), var(--gold-color));
         }
 
         @media (max-width: 768px) {
@@ -179,16 +201,27 @@
                 height: auto;
                 position: relative;
                 border-left: none;
-                border-bottom: 1px solid var(--gold-color);
+                border-bottom: 2px solid var(--gold-color);
             }
             .main-content {
                 margin-right: 0;
             }
             header {
                 padding: 20px;
+                flex-direction: column;
             }
             .search-bar {
                 width: 250px;
+                margin-bottom: 20px;
+            }
+            .header-icons {
+                margin-bottom: 10px;
+            }
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -208,7 +241,7 @@
             </nav>
         </div>
         <div class="contact-info">
-            <p>تواصل معنا:</p>
+            <p>تواصل معنا لطلب منتجاتنا:</p>
             <p>هاتف: <a href="tel:01151495701">01151495701</a></p>
             <p>بريد: <a href="mailto:fattahwsmi@gmail.com">fattahwsmi@gmail.com</a></p>
         </div>
@@ -227,7 +260,7 @@
 
         <section class="hero">
             <h2>تجربة مذاق استثنائية</h2>
-            <p>بن كولومبي متوازن بقوام غني ونكهة كلاسيكية محبوبة، تم تحميصه بعناية ليناسب ذوقك الرفيع.</p>
+            <p>نجمع بين أصالة البن الخام ومشروبات مختصة تُعد بعناية فائقة لتناسب ذوقك الرفيع. ابدأ يومك بكوب من القهوة المحضرة بحب.</p>
             <a href="tel:01151495701" class="btn">اطلب الآن</a>
         </section>
     </div>
