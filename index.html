@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بن ابن لقمان</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fdfaf6;
+            color: #4a3728;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #6d513b;
+        }
+
+        .nav-links a {
+            color: #4a3728;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d29034;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .cta-button {
+            background-color: #d29034;
+            color: #fff;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #b57620;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #6d513b;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #d29034;
+            margin: 10px auto 0;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #6d513b;
+        }
+
+        .product-content p {
+            color: #776655;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .order-button {
+            background-color: #4a3728;
+            color: #fff;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .order-button:hover {
+            background-color: #6d513b;
+        }
+
+        .about-section {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 4rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .about-section p {
+            font-size: 1.3rem;
+            color: #4a3728;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #6d513b;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .social-links a {
+            color: #d29034;
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+            text-decoration: none;
+        }
+
+        .contact-form {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .submit-button {
+            background-color: #d29034;
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            width: 100%;
+        }
+
+        footer {
+            background-color: #4a3728;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">بن ابن لقمان</div>
+            <div class="nav-links">
+                <a href="#home">الرئيسية</a>
+                <a href="#products">المنتجات</a>
+                <a href="#about">من نحن</a>
+                <a href="#contact">اتصل بنا</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>بن ابن لقمان</h1>
+        <p>تجربة مذاق استثنائية تبدأ من الكوب الأول</p>
+        <a href="#products" class="cta-button">اطلب الآن</a>
+    </section>
+
+    <div class="container">
+        <section id="products">
+            <h2 class="section-title">منتجاتنا</h2>
+            <div class="products-grid">
+                
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=500" alt="بن كولومبي">
+                    <div class="product-content">
+                        <h3>البن الكولومبي</h3>
+                        <p>بن كولومبي متوازن بقوام غني ونكهة كلاسيكية محبوبة.</p>
+                        <button class="order-button">اطلب الآن</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?auto=format&fit=crop&w=500" alt="بن برازيلي">
+                    <div class="product-content">
+                        <h3>البن البرازيلي</h3>
+                        <p>بن برازيلي فاخر يتميز بنكهات الشوكولاتة والمكسرات.</p>
+                        <button class="order-button">اطلب الآن</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a06d9b4a21d7?auto=format&fit=crop&w=500" alt="بن يمني">
+                    <div class="product-content">
+                        <h3>البن اليمني</h3>
+                        <p>بن يمني أصيل ذو طعم فريد وعميق لعشاق القهوة.</p>
+                        <button class="order-button">اطلب الآن</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1606791405792-bf0014a04012?auto=format&fit=crop&w=500" alt="بن إثيوبي">
+                    <div class="product-content">
+                        <h3>البن الإثيوبي</h3>
+                        <p>بن إثيوبي يتميز بنكهاته الزهرية والحمضية المميزة.</p>
+                        <button class="order-button">اطلب الآن</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1582236894086-a70d85cd8d14?auto=format&fit=crop&w=500" alt="سناكس وشوكولاتة">
+                    <div class="product-content">
+                        <h3>تشكيلة السناكس</h3>
+                        <p>استمتع بألذ البسكويتات والشوكولاتة مع قهوتك المفضلة.</p>
+                        <button class="order-button">اطلب الآن</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <div class="container">
+        <section id="about" class="about-section">
+            <h2 class="section-title">من نحن</h2>
+            <p>في بن ابن لقمان، بنحتفل بكل تفصيلة في عالم القهوة. بدأت رحلتنا من شغف عميق لاختيار أفضل أنواع البن، لنقدم لكم تجربة مذاق استثنائية تبدأ من الكوب الأول. نجمع بين أصالة البن الخام ومشروباتنا المحضرة بعناية، لنكون وجهتكم المثالية.</p>
+        </section>
+    </div>
+
+    <div class="container">
+        <section id="contact" class="contact-section">
+            <div class="contact-info">
+                <h2>اتصل بنا</h2>
+                <p>يسعدنا تواصلكم معنا وطلب منتجاتنا في أي وقت.</p>
+                <p>العنوان: القاهرة، مصر</p>
+                <p>الهاتف: ٠١٢٣٤٥٦٧٨٩</p>
+                <p>البريد الإلكتروني: info@ibnluqman.com</p>
+                <div class="social-links">
+                    <a href="#">فيسبوك</a>
+                    <a href="#">إنستغرام</a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">الاسم</label>
+                        <input type="text" id="name" placeholder="أدخل اسمك هنا">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" placeholder="أدخل بريدك الإلكتروني">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">الطلب أو الرسالة</label>
+                        <textarea id="message" rows="4" placeholder="اطلب منتجاتك هنا"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">إرسال الطلب</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 جميع الحقوق محفوظة لبن ابن لقمان</p>
+    </footer>
+
+</body>
+</html>
